@@ -259,7 +259,7 @@ open class JZLongPressWeekView: JZBaseWeekView {
             // Beyond the top set as the current day
             startDate = dateInSection.startOfDay
         } else {
-            let currentMin = Calendar.current.component(.minute, from: date)
+            let currentMin = JZCalendar.current.component(.minute, from: date)
             // Choose previous time interval (currentMin/timeMinInterval = Int)
             let minValue = (currentMin/timeMinInterval) * timeMinInterval
             startDate = date.set(minute: minValue)

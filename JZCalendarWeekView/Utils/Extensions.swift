@@ -149,19 +149,19 @@ extension UILabel {
 extension Date {
 
     var isToday: Bool {
-        return Calendar.current.isDateInToday(self)
+        return JZCalendar.current.isDateInToday(self)
     }
 
     var isYesterday: Bool {
-        return Calendar.current.isDateInYesterday(self)
+        return JZCalendar.current.isDateInYesterday(self)
     }
 
     var isTomorrow: Bool {
-        return Calendar.current.isDateInTomorrow(self)
+        return JZCalendar.current.isDateInTomorrow(self)
     }
 
     static func getCurrentWeekDays(firstDayOfWeek: DayOfWeek?=nil) -> [Date] {
-        var calendar = Calendar.current
+        var calendar = JZCalendar.current
         calendar.firstWeekday = (firstDayOfWeek ?? .Sunday).rawValue
         let today = calendar.startOfDay(for: Date())
         let dayOfWeek = calendar.component(.weekday, from: today)
@@ -171,11 +171,11 @@ extension Date {
     }
 
     func add(component: Calendar.Component, value: Int) -> Date {
-        return Calendar.current.date(byAdding: component, value: value, to: self)!
+        return JZCalendar.current.date(byAdding: component, value: value, to: self)!
     }
 
     var startOfDay: Date {
-        return Calendar.current.startOfDay(for: self)
+        return JZCalendar.current.startOfDay(for: self)
     }
 
     var endOfDay: Date {
@@ -183,7 +183,7 @@ extension Date {
     }
 
     func getDayOfWeek() -> DayOfWeek {
-        let weekDayNum = Calendar.current.component(.weekday, from: self)
+        let weekDayNum = JZCalendar.current.component(.weekday, from: self)
         let weekDay = DayOfWeek(rawValue: weekDayNum)!
         return weekDay
     }
@@ -191,18 +191,19 @@ extension Date {
     func getTimeIgnoreSecondsFormat() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
+        formatter.timeZone = JZCalendar.current.timeZone
         return formatter.string(from: self)
     }
 
     static func daysBetween(start: Date, end: Date, ignoreHours: Bool) -> Int {
         let startDate = ignoreHours ? start.startOfDay : start
         let endDate = ignoreHours ? end.startOfDay : end
-        return Calendar.current.dateComponents([.day], from: startDate, to: endDate).day!
+        return JZCalendar.current.dateComponents([.day], from: startDate, to: endDate).day!
     }
 
     static let components: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute, .second, .weekday]
     private var dateComponents: DateComponents {
-        return  Calendar.current.dateComponents(Date.components, from: self)
+        return  JZCalendar.current.dateComponents(Date.components, from: self)
     }
 
     var year: Int { return dateComponents.year! }
@@ -215,7 +216,7 @@ extension Date {
     var weekday: Int { return dateComponents.weekday! }
 
     func set(year: Int?=nil, month: Int?=nil, day: Int?=nil, hour: Int?=nil, minute: Int?=nil, second: Int?=nil, tz: String?=nil) -> Date {
-        let timeZone = Calendar.current.timeZone
+        let timeZone = JZCalendar.current.timeZone
         let year = year ?? self.year
         let month = month ?? self.month
         let day = day ?? self.day
@@ -223,7 +224,7 @@ extension Date {
         let minute = minute ?? self.minute
         let second = second ?? self.second
         let dateComponents = DateComponents(timeZone: timeZone, year: year, month: month, day: day, hour: hour, minute: minute, second: second)
-        let date = Calendar.current.date(from: dateComponents)
+        let date = JZCalendar.current.date(from: dateComponents)
         return date!
     }
 }

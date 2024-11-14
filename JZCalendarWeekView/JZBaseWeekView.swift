@@ -5,7 +5,6 @@
 //  Created by Jeff Zhang on 28/3/18.
 //  Copyright © 2018 Jeff Zhang. All rights reserved.
 //
-import UIKit
 
 public protocol JZBaseViewDelegate: class {
 
@@ -296,7 +295,7 @@ open class JZBaseWeekView: UIView {
     ///
     /// - Parameter time: Only **hour and min** will be calulated for the Y offset
     open func scrollWeekView(to time: Date) {
-        let components = Calendar.current.dateComponents([.hour, .minute], from: time)
+        let components = JZCalendar.current.dateComponents([.hour, .minute], from: time)
         let hour = CGFloat(components.hour!) + CGFloat(components.minute!) / 60
         let setTimeY = hour * flowLayout.hourHeight + flowLayout.contentsMargin.top
         let maxOffsetY = collectionView.contentSize.height - collectionView.frame.height + flowLayout.columnHeaderHeight + flowLayout.allDayHeaderHeight + flowLayout.contentsMargin.bottom + flowLayout.contentsMargin.top
@@ -354,7 +353,7 @@ open class JZBaseWeekView: UIView {
     /// Get Date for specific section.
     /// The 0 section start from previous page, which means the first date section in current page should be **numOfDays**.
     open func getDateForSection(_ section: Int) -> Date {
-        return Calendar.current.date(byAdding: .day, value: section, to: initDate)!
+        return JZCalendar.current.date(byAdding: .day, value: section, to: initDate)!
     }
 
     /**

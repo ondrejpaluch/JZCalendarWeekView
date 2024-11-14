@@ -152,6 +152,34 @@ Horizontal scrollable range dates allow you to set your preferred scrollable ran
 
 #### For futher usage, you can also check the example project, some comments in code or just email me.<br />
 
+### Custom Time Zone
+
+If you need to use a time zone other than the system time zone, you can do the following:
+
+1. Implement Interface `JZICalendarProvider`
+
+```swift 
+import JZCalendarWeekView
+
+class CustomCalendarProvider: JZICalendarProvider {
+
+    func provideCalendar() -> Calendar {
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "Europe/Bratislava")!
+        
+        return calendar
+    }
+
+}
+```
+
+2. Set its instance to `JZCalendar` class 
+
+```swift 
+JZCalendar.provider = CustomCalendarProvider()
+```
+
+
 ## Requirements
 
 - iOS 9.0+

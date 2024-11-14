@@ -13,13 +13,15 @@ open class JZColumnHeader: UICollectionReusableView {
 
     public var lblDay = UILabel()
     public var lblWeekday = UILabel()
-    let calendarCurrent = Calendar.current
+    let calendarCurrent = JZCalendar.current
     public var dateFormatter = DateFormatter()
 
     public override init(frame: CGRect) {
         super.init(frame: .zero)
         setupUI()
         backgroundColor = .clear
+
+        dateFormatter.timeZone = JZCalendar.current.timeZone
     }
 
     required public init?(coder aDecoder: NSCoder) {

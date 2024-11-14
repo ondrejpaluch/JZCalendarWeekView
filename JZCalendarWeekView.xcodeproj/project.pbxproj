@@ -36,6 +36,9 @@
 		8EF7EBCD20A55C8E00D5CEEA /* JZAllDayCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7EBCC20A55C8E00D5CEEA /* JZAllDayCorner.swift */; };
 		8EF7EBCF20A55CF900D5CEEA /* JZAllDayHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7EBCE20A55CF900D5CEEA /* JZAllDayHeader.swift */; };
 		8EF7EBD120A55D1000D5CEEA /* JZAllDayHeaderBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7EBD020A55D1000D5CEEA /* JZAllDayHeaderBackground.swift */; };
+		B87610052CE624FD00AE83E7 /* JZCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87610032CE624FD00AE83E7 /* JZCalendar.swift */; };
+		B87610062CE624FD00AE83E7 /* JZCalendarProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87610042CE624FD00AE83E7 /* JZCalendarProvider.swift */; };
+		B87610082CE6256700AE83E7 /* JZICalendarProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87610072CE6256700AE83E7 /* JZICalendarProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,9 @@
 		8EF7EBCC20A55C8E00D5CEEA /* JZAllDayCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JZAllDayCorner.swift; sourceTree = "<group>"; };
 		8EF7EBCE20A55CF900D5CEEA /* JZAllDayHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JZAllDayHeader.swift; sourceTree = "<group>"; };
 		8EF7EBD020A55D1000D5CEEA /* JZAllDayHeaderBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JZAllDayHeaderBackground.swift; sourceTree = "<group>"; };
+		B87610032CE624FD00AE83E7 /* JZCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZCalendar.swift; sourceTree = "<group>"; };
+		B87610042CE624FD00AE83E7 /* JZCalendarProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JZCalendarProvider.swift; sourceTree = "<group>"; };
+		B87610072CE6256700AE83E7 /* JZICalendarProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JZICalendarProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,9 @@
 		8E1BA94C206B4329007BE13C /* JZCalendarWeekView */ = {
 			isa = PBXGroup;
 			children = (
+				B87610032CE624FD00AE83E7 /* JZCalendar.swift */,
+				B87610072CE6256700AE83E7 /* JZICalendarProvider.swift */,
+				B87610042CE624FD00AE83E7 /* JZCalendarProvider.swift */,
 				8E1BA95A206B4826007BE13C /* JZWeekViewFlowLayout.swift */,
 				8E99A0A12134E84800415071 /* JZCollectionView.swift */,
 				8E1BA956206B47DA007BE13C /* JZBaseWeekView.swift */,
@@ -338,6 +347,7 @@
 				8E1BA960206B4B84007BE13C /* JZColumnHeader.swift in Sources */,
 				8E023C84206C732300C523BE /* JZBaseEvent.swift in Sources */,
 				8E1BA964206B4E82007BE13C /* JZCornerHeader.swift in Sources */,
+				B87610062CE624FD00AE83E7 /* JZCalendarProvider.swift in Sources */,
 				8E1BA96E206B5B55007BE13C /* JZRowHeaderBackground.swift in Sources */,
 				8EF7EBCD20A55C8E00D5CEEA /* JZAllDayCorner.swift in Sources */,
 				8E1BA972206B61B7007BE13C /* JZLongPressEventCell.swift in Sources */,
@@ -346,7 +356,9 @@
 				8E21E8B020916A96002D72D0 /* JZLongPressWeekView.swift in Sources */,
 				8EF7EBD120A55D1000D5CEEA /* JZAllDayHeaderBackground.swift in Sources */,
 				8E023C86206C956F00C523BE /* JZWeekViewColors.swift in Sources */,
+				B87610082CE6256700AE83E7 /* JZICalendarProvider.swift in Sources */,
 				8E1BA96A206B5350007BE13C /* JZWeekViewHelper.swift in Sources */,
+				B87610052CE624FD00AE83E7 /* JZCalendar.swift in Sources */,
 				8E1BA962206B4B99007BE13C /* JZRowHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
