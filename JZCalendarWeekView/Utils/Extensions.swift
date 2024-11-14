@@ -191,6 +191,7 @@ extension Date {
     func getTimeIgnoreSecondsFormat() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
+        formatter.locale = Locale(identifier: "en_US_POSIX") // Force 24-hour time
         formatter.timeZone = JZCalendar.current.timeZone
         return formatter.string(from: self)
     }
